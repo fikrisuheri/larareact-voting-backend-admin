@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/login','api\AuthController@index');
+Route::post('/voting','api\VotingController@simpanpilihan');
+Route::get('/kandidat','api\KandidatController@index');
+
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
